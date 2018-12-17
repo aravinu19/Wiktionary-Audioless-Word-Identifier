@@ -1,0 +1,19 @@
+{
+  "name": "wiktionary_audio_to_words",
+  "version": "1.0.0",
+  "description": "App to provide list of words that requires audio to be uploaded into wiktionary DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aravind RaJ",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "node-html-parser": "^1.1.11",
+    "postman-url-encoder": "^1.0.1",
+    "sqlite3": "^4.0.4"
+  }
+}
