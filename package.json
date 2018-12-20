@@ -11,9 +11,14 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
     "node-html-parser": "^1.1.11",
     "postman-url-encoder": "^1.0.1",
     "sqlite3": "^4.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aravinu19/Wiktionary-Audioless-Word-Identifier.git"
   }
 }
