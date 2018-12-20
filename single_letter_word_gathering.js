@@ -13,18 +13,17 @@ var gather_word_list = function (url_to_start_with, temp_variable_to_store_words
             temp_variable_to_store_words.push(Single_item.firstChild.firstChild.data);
         });
 
-        callback(temp_variable_to_store_words);
+        console.log(`Current URL: ${url_to_start_with}`);
 
         var nav_bar = parsed_page('.mw-prefixindex-nav');
+        var next_page = (nav_bar.contents().attr('href'));
 
-        if (nav_bar == null) {
-            
+        if (next_page == null) {
             
             callback(temp_variable_to_store_words);
 
         }else{
 
-            var next_page = (nav_bar.contents().attr('href'));
             var next_page_link = "https://ta.wiktionary.org" + next_page;
 
             gather_word_list(next_page_link, temp_variable_to_store_words, callback);
