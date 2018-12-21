@@ -15,7 +15,7 @@ axios.get(urlEncoder.encode(static_data.primary_url + static_data.letter_index['
 
     word_list.forEach(element => {
         console.log(element.rawText);
-    })
+    });
 
     const data = new Uint8Array(Buffer.from(parsed_page.querySelector('.mw-prefixindex-list').text));
     fs.writeFile('tamilFile.txt', data, (err) => {

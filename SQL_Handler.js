@@ -1,16 +1,32 @@
 var sqlite3 = require('sqlite3').verbose();
+var fs = require('fs');
 
 var create_db = function(db_name, callback){
 
-    var db = new sqlite3.Database(`./DB/${db_name}.db`);
+    if (fs.existsSync(`./DB/${db_name}.db`)) {
+        callback();
+        return;
+    }
 
-    db.serialize(function() {
-        db.run(`CREATE TABLE words (word TEXT)`);
-    });
+    try {
+        
+        var db = new sqlite3.Database(`./DB/${db_name}.db`);
 
-    db.close();
+        db.serialize(function() {
+            db.run(`CREATE TABLE words (word TEXT PRIMARY KEY UNIQUE)`);
+        });
 
-    callback();
+        db.close();
+
+    } catch (error) {
+        
+        console.log(`Table Already Exists ! ${error}`);
+    
+    } finally {
+    
+        callback();
+    
+    }
 
 };
 
@@ -23,7 +39,8 @@ var insert_list_to_db = function(data_to_insert, db_name, callback){
         var statement = db.prepare("INSERT INTO words VALUES (?)");
         
         data_to_insert.forEach(element => {
-            statement.run(element.toString());
+            statement.run(element);
+            console.log('.');
         });
 
         statement.finalize();

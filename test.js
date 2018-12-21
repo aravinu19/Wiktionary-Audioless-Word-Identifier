@@ -11,21 +11,21 @@ var static_content = require('./static_data');
 
 let primary_url = "https://ta.wiktionary.org/wiki/%E0%AE%9A%E0%AE%BF%E0%AE%B1%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%81:PrefixIndex/%E0%AE%85";
 
-// db.serialize(function() {
-//   db.run("CREATE TABLE lorem (info TEXT)");
+db.serialize(function() {
+  db.run("CREATE TABLE lorem (info TEXT)");
  
-//   var stmt = db.prepare("INSERT INTO lorem VALUES (?)");
-//   for (var i = 0; i < 10; i++) {
-//       stmt.run("Hello World " + i);
-//   }
-//   stmt.finalize();
+  var stmt = db.prepare("INSERT INTO lorem VALUES (?)");
+  for (var i = 0; i < 10; i++) {
+      stmt.run("Hello World " + i);
+  }
+  stmt.finalize();
  
-//   db.each("SELECT rowid AS id, info FROM lorem", function(err, row) {
-//       console.log(row.id + ": " + row.info);
-//   });
-// });
+  db.each("SELECT rowid AS id, info FROM lorem", function(err, row) {
+      console.log(row.id + ": " + row.info);
+  });
+});
  
-// db.close();
+db.close();
 
 
 
@@ -67,4 +67,4 @@ let primary_url = "https://ta.wiktionary.org/wiki/%E0%AE%9A%E0%AE%BF%E0%AE%B1%E0
 
 // });
 
-single_letter_words_gather.gather_words(static_content.primary_url + static_content.letter_index.aa, [], (data) => console.log(data));
+// single_letter_words_gather.gather_words(static_content.primary_url + static_content.letter_index.aa, [], (data) => console.log(data));
