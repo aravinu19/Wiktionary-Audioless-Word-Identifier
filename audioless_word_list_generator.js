@@ -9,7 +9,7 @@ function check_audio_presence(word_list) {
 
     let array_of_words = Object.values(word_list);
 
-    word_list_iterator(word_list, 376);
+    word_list_iterator(word_list, 6248);
 
 }
 
