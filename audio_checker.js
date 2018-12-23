@@ -8,7 +8,7 @@ var check_audio = (word_to_check, callback) => {
 
     site_grabber(url_to_check, (site_data) => {
 
-        return (site_data.data.toString().includes('இல்லை'));
+        callback(site_data.data.toString().includes('இல்லை'));
 
     });
 
