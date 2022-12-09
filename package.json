@@ -12,7 +12,7 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "node-html-parser": "^1.1.11",
     "postman-url-encoder": "^1.0.1",
     "sqlite3": "^4.0.4"
