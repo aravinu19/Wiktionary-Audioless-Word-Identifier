@@ -9,7 +9,7 @@
   "author": "Aravind RaJ",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.2",
     "body-parser": "^1.20.1",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.18.2",
